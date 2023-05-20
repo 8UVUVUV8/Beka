@@ -1,0 +1,24 @@
+{
+  "name": "beka",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "start lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/8UVUVUV8/Beka.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/8UVUVUV8/Beka/issues"
+  },
+  "homepage": "https://github.com/8UVUVUV8/Beka#readme",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}

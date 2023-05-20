@@ -1,0 +1,11 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.mainContainer{
+    margin: 0 auto;
+    width: fit-content;
+}
+h1{
+    text-align: center;
+}
