@@ -6,7 +6,6 @@ const connect ={
     ezBt : document.querySelector('#easyBt'),
     midBt : document.querySelector('#mediumBt'),
     hardBt : document.querySelector('#hardBt'),
-    modalBack : document.querySelector('#modalBack'),
     modal : document.querySelector('#nehézségModal'),
     changeDif : document.querySelector('#changeDif')
 };
@@ -27,36 +26,30 @@ function init(){
 };
 
 function setDif(){
-    connect.ezBt.addEventListener('click',setDifEz)
-
-    connect.midBt.addEventListener('click',setDifMid)
-
-    connect.hardBt.addEventListener('click', setDifHard)
-}
-
-function setDifEz(){
-    setData(10),
-    connect.modal.style.display = "none"
-    connect.modalBack.style.display = "none"
-    connect.changeDif.style.display = "block"
-}
-
-function setDifMid(){
-    setData(100),
-    connect.modal.style.display = "none"
-    connect.modalBack.style.display = "none"
-    connect.changeDif.style.display = "block"
-}
-
-function setDifHard(){
-    setData(1000),
-    connect.modal.style.display = "none"
-    connect.modalBack.style.display = "none"
-    connect.changeDif.style.display = "block"
+    connect.ezBt.addEventListener('click', () =>{
+        setData(10),
+        connect.modal.style.display = "none"
+        connect.changeDif.style.display = "block"
+    })
+    connect.midBt.addEventListener('click', () =>{
+        setData(100),
+        connect.modal.style.display = "none"
+        connect.changeDif.style.display = "block"
+    })
+    connect.hardBt.addEventListener('click', () =>{
+        setData(1000),
+        connect.modal.style.display = "none"
+        connect.changeDif.style.display = "block"
+    })
 }
 
 
 function reStart(){
+    connect.changeDif.addEventListener('click', ()=>{
+        connect.changeDif.style.display = "none",
+        connect.modal.style.display = "block",
+        setDif()
+    })
     setData(vars.level)
  }
 
@@ -77,13 +70,6 @@ function setData(dif){
     //console.log('fut')
     //console.log('setDatalog '+vars.num1)
     //console.log('setDatalog '+vars.num2)
-
-    connect.changeDif.addEventListener('click', ()=>{
-        connect.changeDif.style.display = "none",
-        connect.modal.style.display = "block",
-        connect.modalBack.style.display = "block"
-        setDif()
-    })
 }
 
 
@@ -108,6 +94,5 @@ function checkData(){
         alert("helytelen")
         connect.res.value=""
     }
-
     reStart()
 }
